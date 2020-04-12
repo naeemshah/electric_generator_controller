@@ -9,6 +9,7 @@ import {
 import {Loader} from './app/screens/Loading';
 import {WifiScreen} from './app/screens/WiFi';
 import {ListWifi} from './app/screens/ListWiFi';
+console.disableYellowBox = true;
 
 class App extends React.Component {
   constructor(props) {
@@ -31,23 +32,23 @@ class App extends React.Component {
   };
 
   componentDidMount = async () => {
-    let wifiPer = await WiFiPermission();
-    if (wifiPer === 'granted') {
-      console.log(wifiPer);
-      this.checkWifiStatus();
-    }
+    // let wifiPer = await WiFiPermission();
+    // if (wifiPer === 'granted') {
+    //   console.log(wifiPer);
+    //   this.checkWifiStatus();
+    // }
   };
 
   render = () => {
     // return <ListWifi />;
 
-    if (this.state.checkingWifi) {
-      return <Loader />;
-    }
+    // if (this.state.checkingWifi) {
+    //   return <Loader />;
+    // }
 
-    if (!this.state.WifiEnabled) {
-      return <WifiScreen checkWifiStatus={this.checkWifiStatus} />;
-    }
+    // if (!this.state.WifiEnabled) {
+    //   return <WifiScreen checkWifiStatus={this.checkWifiStatus} />;
+    // }
 
     return <MyDrawer />;
   };

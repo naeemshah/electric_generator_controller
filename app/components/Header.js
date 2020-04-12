@@ -10,7 +10,6 @@ export const TopHeader = ({navigation}) => {
         text: 'Genertor Controller',
         style: {color: '#fff', fontWeight: 'bold'},
       }}
-      
     />
   );
 };

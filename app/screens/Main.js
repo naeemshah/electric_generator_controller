@@ -1,16 +1,55 @@
-import React from 'react';
-import {Text} from 'react-native';
-
-// pull in header with DrawerTrigger
+import React, {TouchableWithoutFeedback} from 'react';
+import {Col, Row, Grid} from 'react-native-easy-grid';
+import {
+  Container,
+  Content,
+  Form,
+  Item,
+  Input,
+  Label,
+  Switch,
+  Right,
+  Text,
+  Button,
+} from 'native-base';
 import {TopHeader} from '../components/Header.js';
-import {connectedToWifi} from "./../helpers/wifiPermission"
 
-export const HomeScreen =  ({navigation}) => {
-  
+export const HomeScreen = ({navigation}) => {
+  let [color, colorFun] = React.useState('green');
   return (
-    <React.Fragment>
+    <Container>
       <TopHeader navigation={navigation} />
-      <Text>asdsad</Text>
-    </React.Fragment>
+      <Grid>
+        <Row size={1} />
+        <Row size={1}>
+          <Col size={8} />
+          <Col size={20}>
+            <Button
+              onPress={() => {
+                colorFun('red');
+                setTimeout(() => {
+                  colorFun('green');
+                }, 500);
+              }}
+              style={{
+                backgroundColor: color,
+                width: 150,
+                height: 150,
+                borderRadius: 75,
+              }}
+            />
+          </Col>
+        </Row>
+        <Row>
+          <Col />
+          <Col>
+            <Button danger={true}>
+              <Text>Stop</Text>
+            </Button>
+          </Col>
+          <Col />
+        </Row>
+      </Grid>
+    </Container>
   );
 };

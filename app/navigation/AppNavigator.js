@@ -6,6 +6,7 @@ import {Setting} from '../screens/Setting';
 
 const Drawer = createDrawerNavigator();
 
+
 export const MyDrawer = () => {
   return (
     <NavigationContainer>

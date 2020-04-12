@@ -6,7 +6,7 @@ import {listWifi} from './../helpers/wifiPermission';
 export const ListWifi = () => {
   let [connectingToWif, connectFun] = React.useState(false);
   let [wifiList, listFun] = React.useState([]);
-  
+
   console.log(listWifi(listFun));
   console.log(wifiList);
   return (
